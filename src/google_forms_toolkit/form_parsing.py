@@ -330,7 +330,7 @@ def get_google_form(form_id: str) -> Form | None:
     Returns:
         an instance of the Form class
 
-    """
+    """  # noqa: DOC501
     response = requests.get(
         f"https://docs.google.com/forms/d/e/{form_id}/viewform",
         headers={
@@ -392,7 +392,7 @@ def get_google_form(form_id: str) -> Form | None:
 
         if history == history_prev:
             msg = "Got the same section page in two iterations, somehing went wrong"
-            raise Exception(  # noqa: DOC501, TRY002
+            raise Exception(  # noqa: TRY002
                 msg,
             )
 
