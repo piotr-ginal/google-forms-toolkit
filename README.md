@@ -20,21 +20,33 @@ $ python -m pip install -e .
 ```
 
 ## Spammers
-scripts that will automatically send responses to a given form
-### threaded_spammer_1.py
-tool that enables users to send multiple responses to any Google Form with ease. This script prompts the user to provide answers for each question interactively, making it highly flexible for various data submission scenarios. It can also generate pseudo-random responses for every supported question type - `--random` option must be used.
 
-#### Usage:
+`spamform` is a CLI tool that enables users to send multiple responses to any Google Form.
+
+### Usage
+
 ```console
-$ python threaded_spammer_1.py [--random]
+spamform [OPTIONS] FORM_ID
 ```
-1. You will be asked for the ID of your form. Provide the ID when prompted.
-2. When not using `--random`: Answer each question on the form when prompted.
-3. At the end, specify the number of replies you want to send (e.g., 500).
 
-Example:
+- `FORM_ID`: The ID of the Google Form to interact with (required).
+- `--random`: Use random answers for the form.
+- `--responses INTEGER`: Number of responses to submit. [default: 1]
+- `--workers INTEGER`: Number of worker threads to use. [default: 25]
+- `--help`: Show help message and exit.
+
+**Typical usage flow:**
+
+1. Provide the Google Form ID as an argument.
+2. When not using `--random`: Answer each question on the form when prompted.
+3. Optionally provide the number of replies you want to send (e.g., `--responses 500`).
+
+**Example:**
+
+Result of running the tool:
 ![cli screenshot](.assets/threaded_spammer_interface.png)
-Result of running the script:
+
+Result in Google Forms dashboard:
 ![results in google forms dashboard](.assets/google_forms_dashboard_screenshot.png)
 
 Please note that the threaded_spammer_1.py script currently supports the following types of questions:
