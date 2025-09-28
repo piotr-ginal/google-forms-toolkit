@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  RUFF_VERSION: "0.7.1"
+  RUFF_VERSION: "0.11.11"
   MYPY_VERSION: "1.13.0"
 
 jobs:
